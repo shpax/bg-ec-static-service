@@ -1,0 +1,50 @@
+aside.wrap-sidebar.js-sidebar
+  .s-full.js-hide-sidebar
+  .sidebar.flex-col-l.p-t-22.p-b-25
+    .flex-r.w-full.p-b-30.p-r-27
+      .fs-35.lh-10.cl2.p-lr-5.pointer.hov-cl1.trans-04.js-hide-sidebar
+        i.zmdi.zmdi-close
+    .sidebar-content.flex-w.w-full.p-lr-65.js-pscroll
+      ul.sidebar-link.w-full
+        li.p-b-13
+          a.stext-102.cl2.hov-cl1.trans-04(href='/')
+            | Home
+            each category in layout.categories
+              li.p-b-13
+                a.stext-102.cl2.hov-cl1.trans-04(href=`category/${category.link.uid}`)= category.label
+      .sidebar-gallery.w-full.p-tb-30
+        if layout.instagramm
+          a.mtext-101.cl5(href=layout.instagramm.link.url target="_blank")= layout.instagramm.label
+        .flex-w.flex-sb.p-t-36.gallery-lb
+          // item gallery sidebar
+          .wrap-item-gallery.m-b-10
+            a.item-gallery.bg-img1(href='images/gallery-01.jpg', data-lightbox='gallery', style="background-image: url('images/gallery-01.jpg');")
+          // item gallery sidebar
+          .wrap-item-gallery.m-b-10
+            a.item-gallery.bg-img1(href='images/gallery-02.jpg', data-lightbox='gallery', style="background-image: url('images/gallery-02.jpg');")
+          // item gallery sidebar
+          .wrap-item-gallery.m-b-10
+            a.item-gallery.bg-img1(href='images/gallery-03.jpg', data-lightbox='gallery', style="background-image: url('images/gallery-03.jpg');")
+          // item gallery sidebar
+          .wrap-item-gallery.m-b-10
+            a.item-gallery.bg-img1(href='images/gallery-04.jpg', data-lightbox='gallery', style="background-image: url('images/gallery-04.jpg');")
+          // item gallery sidebar
+          .wrap-item-gallery.m-b-10
+            a.item-gallery.bg-img1(href='images/gallery-05.jpg', data-lightbox='gallery', style="background-image: url('images/gallery-05.jpg');")
+          // item gallery sidebar
+          .wrap-item-gallery.m-b-10
+            a.item-gallery.bg-img1(href='images/gallery-06.jpg', data-lightbox='gallery', style="background-image: url('images/gallery-06.jpg');")
+          // item gallery sidebar
+          .wrap-item-gallery.m-b-10
+            a.item-gallery.bg-img1(href='images/gallery-07.jpg', data-lightbox='gallery', style="background-image: url('images/gallery-07.jpg');")
+          // item gallery sidebar
+          .wrap-item-gallery.m-b-10
+            a.item-gallery.bg-img1(href='images/gallery-08.jpg', data-lightbox='gallery', style="background-image: url('images/gallery-08.jpg');")
+          // item gallery sidebar
+          .wrap-item-gallery.m-b-10
+            a.item-gallery.bg-img1(href='images/gallery-09.jpg', data-lightbox='gallery', style="background-image: url('images/gallery-09.jpg');")
+      .sidebar-gallery.w-full
+        span.mtext-101.cl5
+          | About Us
+        p.stext-108.cl6.p-t-27
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus vulputate hendrerit. Praesent faucibus erat vitae rutrum gravida. Vestibulum tempus mi enim, in molestie sem fermentum quis.

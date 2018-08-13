@@ -1,0 +1,15 @@
+section.section-slide
+    .wrap-slick1.rs1-slick1
+      .slick1
+        each item in featured
+          - const { main_image, category, name } = item.data;
+          .item-slick1(style=`background-image: url(${main_image.url});`)
+            .container.h-full
+              .flex-col-l-m.h-full.p-t-100.p-b-30
+                .layer-slick1.animated.visible-false(data-appear='fadeInDown', data-delay='0')
+                  span.ltext-202.cl2.respon2= category.data.title[0].text
+                .layer-slick1.animated.visible-false(data-appear='fadeInUp', data-delay='800')
+                  h2.ltext-104.cl2.p-t-19.p-b-43.respon1= name[0].text
+                .layer-slick1.animated.visible-false(data-appear='zoomIn', data-delay='1600')
+                  a.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04(href=`/product/${item.uid}`)
+                    | i want one

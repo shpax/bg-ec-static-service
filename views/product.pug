@@ -1,0 +1,73 @@
+extends ./layout.pug
+
+block main
+  // breadcrumb
+  .container
+    .bread-crumb.flex-w.p-l-25.p-r-15.p-t-30.p-lr-0-lg
+      a.stext-109.cl8.hov-cl1.trans-04(href='/')
+        | Home
+        i.fa.fa-angle-right.m-l-9.m-r-10(aria-hidden='true')
+      a.stext-109.cl8.hov-cl1.trans-04(href=`/category/${product.category.uid}`)= product.category.name
+        i.fa.fa-angle-right.m-l-9.m-r-10(aria-hidden='true')
+      span.stext-109.cl4= product.name
+  // Product Detail
+  section.sec-product-detail.bg0.p-t-65.p-b-60
+    .container
+      .row
+        .col-md-6.col-lg-7.p-b-30
+          .p-l-25.p-r-30.p-lr-0-lg
+            .wrap-slick3.flex-sb.flex-w
+              .wrap-slick3-dots
+              .wrap-slick3-arrows.flex-sb-m.flex-w
+              .slick3.gallery-lb
+                each image in product.images
+                  .item-slick3(data-thumb=image.url)
+                    .wrap-pic-w.pos-relative
+                      img(src=image.url, alt='product-image')
+                      a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href=image.url)
+                        i.fa.fa-expand
+        .col-md-6.col-lg-5.p-b-30
+          .p-r-50.p-t-5.p-lr-0-lg
+            h4.mtext-105.cl2.js-name-detail.p-b-14= product.name
+            span.mtext-106.cl2
+              | $20
+            p.stext-102.cl3.p-t-23!= product.description
+            // 
+            .p-t-33
+              .flex-w.flex-r-m.p-b-10
+                .size-203.flex-c-m.respon6
+                  | Size
+                .size-204.respon6-next
+                  .rs1-select2.bor8.bg0
+                    select.js-select2(name='time')
+                      option Choose an option
+                      each option in product.options
+                        option= option.name
+                    .dropDownSelect2
+              .flex-w.flex-r-m.p-b-10
+                .size-204.flex-w.flex-m.respon6-next
+                  .wrap-num-product.flex-w.m-r-20.m-tb-10
+                    .btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
+                      i.fs-16.zmdi.zmdi-minus
+                    input.mtext-104.cl3.txt-center.num-product(type='number', name='num-product', value='1')
+                    .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
+                      i.fs-16.zmdi.zmdi-plus
+                  button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail
+                    | Add to cart
+            // 
+            .flex-w.flex-m.p-l-100.p-t-40.respon7
+              .flex-m.bor9.p-r-10.m-r-11
+                a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.js-addwish-detail.tooltip100(href='#', data-tooltip='Add to Wishlist')
+                  i.zmdi.zmdi-favorite
+              a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#', data-tooltip='Facebook')
+                i.fa.fa-facebook
+              a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#', data-tooltip='Twitter')
+                i.fa.fa-twitter
+              a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#', data-tooltip='Google Plus')
+                i.fa.fa-google-plus
+    .bg6.flex-c-m.flex-w.size-302.m-t-73.p-tb-15
+      span.stext-107.cl6.p-lr-25
+        | SKU: JAK-01
+      span.stext-107.cl6.p-lr-25
+        | Category: Jacket, Men
+
